@@ -1,0 +1,675 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >mozscape (v0.1.6)</a>
+</h1>
+<h4>A node.js client for the Mozscape API</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mozscape">module mozscape</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mozscape.Mozscape">
+            function <span class="apidocSignatureSpan">mozscape.</span>Mozscape
+            <span class="apidocSignatureSpan">(accessId, secret)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">mozscape.</span>Mozscape.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mozscape.Mozscape">module mozscape.Mozscape</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mozscape.Mozscape.Mozscape">
+            function <span class="apidocSignatureSpan">mozscape.</span>Mozscape
+            <span class="apidocSignatureSpan">(accessId, secret)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mozscape.Mozscape.prototype">module mozscape.Mozscape.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mozscape.Mozscape.prototype._translateBitfield">
+            function <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>_translateBitfield
+            <span class="apidocSignatureSpan">(columns, lookup)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mozscape.Mozscape.prototype.anchorText">
+            function <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>anchorText
+            <span class="apidocSignatureSpan">(url, scope, cols, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mozscape.Mozscape.prototype.bulkUrlMetrics">
+            function <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>bulkUrlMetrics
+            <span class="apidocSignatureSpan">(urlsArray, cols, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mozscape.Mozscape.prototype.configure">
+            function <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>configure
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mozscape.Mozscape.prototype.get">
+            function <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>get
+            <span class="apidocSignatureSpan">(apiPath, params, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mozscape.Mozscape.prototype.links">
+            function <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>links
+            <span class="apidocSignatureSpan">(url, scope, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mozscape.Mozscape.prototype.metadata">
+            function <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>metadata
+            <span class="apidocSignatureSpan">(option, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mozscape.Mozscape.prototype.post">
+            function <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>post
+            <span class="apidocSignatureSpan">(apiPath, params, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mozscape.Mozscape.prototype.send">
+            function <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>send
+            <span class="apidocSignatureSpan">(apiPath, params, method, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mozscape.Mozscape.prototype.topPages">
+            function <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>topPages
+            <span class="apidocSignatureSpan">(url, cols, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mozscape.Mozscape.prototype.urlMetrics">
+            function <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>urlMetrics
+            <span class="apidocSignatureSpan">(url, cols, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>ANCHOR_TEXT_FLAGS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>LINK_FLAGS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>URL_METRICS_FLAGS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>defaults</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mozscape" id="apidoc.module.mozscape">module mozscape</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mozscape.Mozscape" id="apidoc.element.mozscape.Mozscape">
+        function <span class="apidocSignatureSpan">mozscape.</span>Mozscape
+        <span class="apidocSignatureSpan">(accessId, secret)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Mozscape = function (accessId, secret) {
+  this.configure({accessId: accessId, secret: secret});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mozscape.Mozscape" id="apidoc.module.mozscape.Mozscape">module mozscape.Mozscape</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mozscape.Mozscape.Mozscape" id="apidoc.element.mozscape.Mozscape.Mozscape">
+        function <span class="apidocSignatureSpan">mozscape.</span>Mozscape
+        <span class="apidocSignatureSpan">(accessId, secret)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Mozscape = function (accessId, secret) {
+  this.configure({accessId: accessId, secret: secret});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mozscape.Mozscape.prototype" id="apidoc.module.mozscape.Mozscape.prototype">module mozscape.Mozscape.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mozscape.Mozscape.prototype._translateBitfield" id="apidoc.element.mozscape.Mozscape.prototype._translateBitfield">
+        function <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>_translateBitfield
+        <span class="apidocSignatureSpan">(columns, lookup)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_translateBitfield = function (columns, lookup) {
+  let bits = 0;
+
+  columns.forEach(key =&#x3e; {
+    if (typeof lookup[key] !== &#x27;undefined&#x27;) {
+
+<span class="apidocCodeCommentSpan">      /*
+       * javascript has a &#x22;documented bug&#x22; in that it will only
+       * use the lower 32 bit of a number in binary OR operations.
+       * Some of the bitfields in the Mozscape API have more than 32 bits.
+       * Therefore we replace binary OR (|=) with addition (+=)
+       * which has the same effect, except that it works. - yas4891
+       */
+</span>
+      bits += lookup[key];
+    }
+  });
+
+  return bits;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mozscape.Mozscape.prototype.anchorText" id="apidoc.element.mozscape.Mozscape.prototype.anchorText">
+        function <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>anchorText
+        <span class="apidocSignatureSpan">(url, scope, cols, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">anchorText = function (url, scope, cols, callback) {
+  let apiPath = `anchor-text/${encodeURIComponent(url)}`;
+  let params = {
+    Scope: scope,
+    Cols: this._translateBitfield(cols, this.ANCHOR_TEXT_FLAGS),
+    Sort: &#x27;domains_linking_page&#x27;
+  };
+
+  this.get(apiPath, params, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    * `sourceCols` Array of strings for the columns returned for the source of the link, see `Mozscape.URL_METRICS_FLAGS`
+    * `linkCols` Array of strings for the columns for the link itself, see `Linkscape.LINK_FLAGS`
+
+* `callback` Same as urlMetrics.
+
+###anchorText
+
+    moz.<span class="apidocCodeKeywordSpan">anchorText</span>(url, scope, cols, callback)
+
+* `url` The URL you want to get anchor texts for, ex: `www.google.com`
+* `scope` Scope of the link as per the MOZ API docs, ex: `phrase_to_page`
+* `cols` Array of strings for the columns returned, see `Mozscape.ANCHOR_TEXT_FLAGS`
+* `callback` Same as urlMetrics.
+
+###topPages
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mozscape.Mozscape.prototype.bulkUrlMetrics" id="apidoc.element.mozscape.Mozscape.prototype.bulkUrlMetrics">
+        function <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>bulkUrlMetrics
+        <span class="apidocSignatureSpan">(urlsArray, cols, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bulkUrlMetrics = function (urlsArray, cols, callback) {
+  let apiPath = &#x27;url-metrics/&#x27;;
+
+  cols = this._translateBitfield(cols, this.URL_METRICS_FLAGS);
+  apiPath += `?Cols=${cols}`;
+
+  let expires = Date.now() + 300;
+  let stringToSign = `${this.options.accessId}\n${expires}`;
+  let binarySignature = crypto.createHmac(&#x27;sha1&#x27;, this.options.secret).update(stringToSign).digest(&#x27;base64&#x27;);
+  let urlSafeSignature = encodeURIComponent(binarySignature);
+
+  apiPath += `&#x26;AccessId=${this.options.accessId}`;
+  apiPath += `&#x26;Expires=${expires}`;
+  apiPath += `&#x26;Signature=${urlSafeSignature}`;
+
+  let path = `http://${this.options.hostname}/${this.options.path}/${apiPath}`;
+  let auth = new Buffer(`${this.options.accessId}:${this.options.secret}`).toString(&#x27;base64&#x27;);
+  let params = JSON.stringify(urlsArray);
+  let options = {
+    url: path,
+    method: &#x27;POST&#x27;,
+    headers: {
+      &#x27;User-Agent&#x27;: this.defaults.userAgent,
+      Authorization: `Basic ${auth}`,
+      &#x27;Content-Length&#x27;: params.length
+    },
+    body: params
+  };
+  request(options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mozscape.Mozscape.prototype.configure" id="apidoc.element.mozscape.Mozscape.prototype.configure">
+        function <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>configure
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">configure = function (options) {
+  options = options || {};
+  this.options = {};
+
+  Object.keys(this.defaults).forEach(key =&#x3e; {
+    this.options[key] = typeof options[key] !== &#x27;undefined&#x27; ? options[key] : this.defaults[key];
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mozscape.Mozscape.prototype.get" id="apidoc.element.mozscape.Mozscape.prototype.get">
+        function <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>get
+        <span class="apidocSignatureSpan">(apiPath, params, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (apiPath, params, callback) {
+  return this.send(apiPath, params, &#x27;GET&#x27;, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mozscape.Mozscape.prototype.links" id="apidoc.element.mozscape.Mozscape.prototype.links">
+        function <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>links
+        <span class="apidocSignatureSpan">(url, scope, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">links = function (url, scope, options, callback) {
+  let apiPath = `links/${encodeURIComponent(url)}`;
+  let params = {
+    Scope: scope
+  };
+
+  if (typeof options.sort !== &#x27;undefined&#x27;) {
+    params.Sort = options.sort;
+  }
+
+  if (typeof options.filter !== &#x27;undefined&#x27;) {
+    params.Filter = options.filter.join(&#x27;+&#x27;);
+  }
+
+  if (typeof options.targetCols !== &#x27;undefined&#x27;) {
+    params.TargetCols = this._translateBitfield(
+      options.targetCols,
+      this.URL_METRICS_FLAGS
+    );
+  }
+
+  if (typeof options.sourceCols !== &#x27;undefined&#x27;) {
+    params.SourceCols = this._translateBitfield(
+      options.sourceCols,
+      this.URL_METRICS_FLAGS
+    );
+  }
+
+  if (typeof options.linkCols !== &#x27;undefined&#x27;) {
+    params.LinkCols = this._translateBitfield(
+      options.linkCols,
+      this.LINK_FLAGS
+    );
+  }
+
+  this.get(apiPath, params, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `callback` A function to be called asynchronously once the response comes
+back from the API. The function should accept 2 arguments in the following
+order: `error, result` where error will either be an object or null, and
+result will be an object containing the response from seoMOZ.
+
+###links
+
+moz.<span class="apidocCodeKeywordSpan">links</span>(url, scope, options, callback)
+
+* `url` The URL you want to get links for, ex: `www.google.com`
+* `scope` The scope of the results as per the seoMOZ API docs, ex: `page_to_page`
+* `options` An object with any of the following:
+
+* `sort` As per the seoMOZ API docs, ex: `page_authority`
+* `filter` An array of strings, ex: `[&#x27;internal&#x27;, external&#x27;, &#x27;nofollow&#x27;]`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mozscape.Mozscape.prototype.metadata" id="apidoc.element.mozscape.Mozscape.prototype.metadata">
+        function <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>metadata
+        <span class="apidocSignatureSpan">(option, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">metadata = function (option, callback) {
+  let apiPath = `metadata/${option}`;
+  let params = {};
+
+  this.get(apiPath, params, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `offset` Return starting at the nth result
+* `limit` How many results to return (max 1000)
+
+* `callback` Same as urlMetrics
+
+###metadata
+
+moz.<span class="apidocCodeKeywordSpan">metadata</span>(option, callback)
+
+* `option` A string of any of the following:
+
+* `last_update`
+* `next_update`
+* `index_stats`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mozscape.Mozscape.prototype.post" id="apidoc.element.mozscape.Mozscape.prototype.post">
+        function <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>post
+        <span class="apidocSignatureSpan">(apiPath, params, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">post = function (apiPath, params, callback) {
+  return this.send(apiPath, params, &#x27;POST&#x27;, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mozscape.Mozscape.prototype.send" id="apidoc.element.mozscape.Mozscape.prototype.send">
+        function <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>send
+        <span class="apidocSignatureSpan">(apiPath, params, method, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">send = function (apiPath, params, method, callback) {
+
+  let path = `http://${this.options.hostname}/${this.options.path}/${apiPath}`;
+  let auth = new Buffer(`${this.options.accessId}:${this.options.secret}`).toString(&#x27;base64&#x27;);
+
+  let options = {
+    url: path,
+    headers: {
+      &#x27;User-Agent&#x27;: this.defaults.userAgent,
+      Authorization: `Basic ${auth}`,
+      &#x27;Content-Length&#x27;: 0
+    }
+  };
+
+  let args = [];
+  Object.keys(params).forEach(key =&#x3e; args.push(`${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`));
+
+  let queryString = args.join(&#x27;&#x26;&#x27;);
+  if (queryString) {
+    switch (method) {
+      case &#x27;GET&#x27;:
+        options.url += `?${queryString}`;
+        break;
+      case &#x27;POST&#x27;:
+        options.headers[&#x27;Content-Length&#x27;] = queryString.length;
+        break;
+      default:
+        break;
+    }
+  }
+
+  function cb(error, response, body) {
+    if (error)
+      return callback(error);
+
+    if (response.statusCode &#x3e;= 300 || response.statusCode &#x3c; 200)
+      return callback({status: response.statusCode, msg: body});
+
+    return callback(null, JSON.parse(body));
+  }
+
+  console.log(&#x27;Calling: &#x27; + options.url);
+  request(options, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mozscape.Mozscape.prototype.topPages" id="apidoc.element.mozscape.Mozscape.prototype.topPages">
+        function <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>topPages
+        <span class="apidocSignatureSpan">(url, cols, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">topPages = function (url, cols, options, callback) {
+  let apiPath = `top-pages/${encodeURIComponent(url)}`;
+  let params = {
+    Cols: this._translateBitfield(cols, this.URL_METRICS_FLAGS)
+  };
+
+  params.Offset = typeof options.offset === &#x27;undefined&#x27; ? 0 : options.offset;
+  params.Limit = typeof options.limit === &#x27;undefined&#x27; ? 1000 : options.limit;
+
+  this.get(apiPath, params, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `url` The URL you want to get anchor texts for, ex: `www.google.com`
+* `scope` Scope of the link as per the MOZ API docs, ex: `phrase_to_page`
+* `cols` Array of strings for the columns returned, see `Mozscape.ANCHOR_TEXT_FLAGS`
+* `callback` Same as urlMetrics.
+
+###topPages
+
+moz.<span class="apidocCodeKeywordSpan">topPages</span>(url, cols, options, callback)
+
+* `url` The subdomain you want results for
+* `cols` An array of strings for the columns you want in the
+response (see `Mozscape.URL_METRICS_FLAGS`). Ex: `[&#x27;title&#x27;, &#x27;url&#x27;, &#x27;links&#x27;]`
+* `options` An object with any of the following:
+
+* `offset` Return starting at the nth result
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mozscape.Mozscape.prototype.urlMetrics" id="apidoc.element.mozscape.Mozscape.prototype.urlMetrics">
+        function <span class="apidocSignatureSpan">mozscape.Mozscape.prototype.</span>urlMetrics
+        <span class="apidocSignatureSpan">(url, cols, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">urlMetrics = function (url, cols, callback) {
+  let apiPath = `url-metrics/${encodeURIComponent(url)}`;
+  let params = {
+    Cols: this._translateBitfield(cols, this.URL_METRICS_FLAGS)
+  };
+
+  this.get(apiPath, params, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[request](https://www.npmjs.org/package/request)
+
+## Usage
+
+var Mozscape = require(&#x27;mozscape&#x27;).Mozscape;
+
+var moz = new Mozscape(&#x27;your-access-id&#x27;, &#x27;your-secret&#x27;);
+moz.<span class="apidocCodeKeywordSpan">urlMetrics</span>(&#x27;www.google.com&#x27;, [&#x27;url&#x27;, &#x27;links&#x27;], function
+(err, res) {
+    if (err) {
+        console.log(err);
+        return;
+    }
+
+    console.log(res);
+});
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
