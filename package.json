@@ -1,1 +1,38 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmdoc-mozscape",     "homepage": "https://github.com/npmdoc/node-npmdoc-mozscape",     "repository": {         "type": "git",         "url": "https://github.com/npmdoc/node-npmdoc-mozscape.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### api documentation for  mozscape (v0.1.6)  [![npm package](https://img.shields.io/npm/v/npmdoc-mozscape.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-mozscape) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-mozscape.svg)](https://travis-ci.org/npmdoc/node-npmdoc-mozscape)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-mozscape",
+    "keywords": [
+        "documentation",
+        "mozscape"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_mozscape.js",
+    "name": "npmdoc-mozscape",
+    "nameAlias": "npmdoc_mozscape",
+    "nameOriginal": "npmdoc-mozscape",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-mozscape.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
